@@ -12,10 +12,14 @@ def read(path, verts_per_face=3):
         else:
             raise RuntimeError("Unknown File type: " + path)
 
-        nVertices, nFaces, nEdges = map(int, offfile.readline().strip().split())
+        intro = offfile.readline()
+        while intro.strip() == "" or intro.strip().startswith("#"):
+            intro = offfile.readline()
+
+        nVertices, nFaces, nEdges = map(int, intro.strip().split())
 
         if nEdges != 0:
-            print("[WARNING]: %d edges present. Edges are ignored.")
+            print("[WARNING]: %d edges present. Edges are ignored." % nEdges)
 
         if has_color:
             vertices = np.zeros((nVertices, 7), dtype=float) # x,y,z,r,g,b,i
