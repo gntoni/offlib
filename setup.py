@@ -12,7 +12,7 @@ setup(
     author_email = "a.gabas@aist.go.jp",
     description = ("A library to load 3D objects in OFF format file "
                                    "https://en.wikipedia.org/wiki/OFF_(file_format)"),
-    license = "BSD",
+    license = "GPLv3",
     keywords = "OFF 3D object file format",
     url = "http://packages.python.org/an_example_pypi_project",
     py_modules=['offlib'],
